@@ -141,6 +141,7 @@ const Products = (props: ProductProps) => {
     useEffect(() => {
         const productsResponse = fetchProductState.products
         if (productsResponse) {
+            setRefreshing(false)
             setProducts(productsResponse.products)
         }
     }, [fetchProductState.products])

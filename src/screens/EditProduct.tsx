@@ -265,7 +265,7 @@ const EditProduct = (props: ProductProps) => {
 
     const renderProductDetail = () => {
         return (
-            <View style={styles.form}>
+            <KeyboardAwareScrollView contentContainerStyle={styles.form}>
                 <View style={styles.formControl}>
                     <BoldText style={styles.label}>
                         Title
@@ -324,16 +324,18 @@ const EditProduct = (props: ProductProps) => {
                         </DefaultText>
                     </DefaultButton>
                 </View>
-            </View>
+            </KeyboardAwareScrollView>
         )
     }
 
     return (
-        <KeyboardAwareScrollView contentContainerStyle={styles.container} extraHeight={100}>
+        // <KeyboardAwareScrollView contentContainerStyle={styles.container} extraHeight={100} extraScrollHeight={100}>
+        <>
             {renderProductDetail()}
             {fetchProductDetailState.isFetchingProductDetail && <Loading />}
             {editProductState.isFetchingEditProduct && <Loading />}
-        </KeyboardAwareScrollView>
+        </>
+        // </KeyboardAwareScrollView>
     )
 }
 

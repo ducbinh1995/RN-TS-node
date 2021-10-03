@@ -12,7 +12,12 @@ const ProductItem: FC<{ product: Product, onSelect: () => void }> = (props) => {
                 <TouchableOpacity onPress={props.onSelect}>
                     <View>
                         <View style={styles.imageContainer}>
-                            <Image style={styles.image} source={{ uri: HOST_IMAGE + props.product.image }} />
+                            <Image
+                                style={styles.image}
+                                source={{
+                                    uri: HOST_IMAGE + props.product.image
+                                }}
+                            />
                         </View>
                         <View style={styles.details}>
                             <DefaultText style={styles.title}>{props.product.title}</DefaultText>
